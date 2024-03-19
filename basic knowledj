@@ -1,0 +1,58 @@
+
+import {useState, useEffect} from 'react'
+//componement
+const Person = (props) => {
+  return(
+  <>
+  <h1>Name : {props.Name}</h1>
+  <h1>Age : {props.Age}</h1>
+  <h1>Height : {props.Height}</h1>
+  <h1>weight : {props.weight}</h1>
+
+    </>
+  )
+};
+
+const App = () => {
+  const name = "djamel";
+  const nameExist = true;
+  const [COUNTER,setCOUNTER] = useState(0)
+ useEffect ( () =>  {
+alert("you have changed the counter to "+ COUNTER)},[COUNTER])
+  return (
+    <>
+    <div className="training">
+    {/* put curly braces: \{ \} to code in side javaScript*/}
+    {/* <h1>hello, {nameExist ? name : "djamz"}</h1> */}
+    {/*to include more html elements must use framgment noed : <></>  <h1>
+      hello, 
+      {
+        nameExist ? 
+        (
+          <>
+          <h1>Test</h1>
+          <h2>test 2 either work</h2>
+          </>
+        ) :  
+          (
+          "abdo"
+          )
+      }
+    </h1> 
+    < Person Name="Abdennacer"  Age={22} Height="174 cm" weight="78 kg" />
+    < Person Name="top g"  Age={23} Height="184 cm" weight="80 kg" />
+    */}
+   
+  </div>
+  <div className="App">
+  <button onClick={ ()=> setCOUNTER((PrevCount)=>  PrevCount + 1 )}>+</button>
+    <h1>{COUNTER}</h1>
+    <button onClick={ ()=> setCOUNTER((PrevCount)=>  PrevCount - 1 )}>-</button>
+
+  </div>
+
+    </>
+  );
+};
+
+export default App;
